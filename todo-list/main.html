@@ -21,22 +21,15 @@
                 <ul class="list-group" id="list-group">
                     <li class="list-group-item d-flex justify-content-between align-items-center" id="list-group-item">
                       할일 목록
-                      <span class="badge badge-primary badge-pill" id="button-area1">삭제</span>
+                      <span class="badge badge-primary badge-pill" id="button-area1" onclick="deleteTodo()">삭제</span>
                     </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center" id="list-group-item">
-                      할일 목록
-                        <span class="badge badge-primary badge-pill" id="button-area1">삭제</span>
-                      </li>
-                      <li class="list-group-item d-flex justify-content-between align-items-center" id="list-group-item" id="button-area1">
-                        할일 목록
-                        <span class="badge badge-primary badge-pill" id="button-area1">삭제</span>
-                      </li>
+                   
                 </ul>
             </div>
             <div class="input-group mb-3" id="input-group">
                 <input type="text" class="form-control" id="input-area">
                 <div class="input-group-append">
-                  <button class="btn btn-outline-secondary" type="button" id="button-area2" onclick="x()">등록</button>
+                  <button class="btn btn-outline-secondary" type="button" id="button-area2" onclick="addTodo()">등록</button>
                 </div>
               </div>
 
@@ -51,11 +44,25 @@
 
 
           // JQuery 비교
-          function x(){
+          function addTodo(){
           //     let todo = document.getElementById("input-area").val
                     
                  let todo = $("#input-area").val();
                  console.log(todo)
+                 let id = Math.floor(Math.random() * 100000)
+                 console.log(id)
+
+                 let list_item = `<li class="list-group-item d-flex justify-content-between align-items-center list-${id}" id="list-group-item">
+                      ${todo}
+                      <span class="badge badge-primary badge-pill" id="button-area1" onclick="deleteTodo">삭제</span>
+                    </li>`
+                    $("#list-group").append(list_item)
+                    $("#input-area").val('')
+          }
+
+          function deleteTodo() {
+              $(".list-"+id).remove()
+
 
           }
 
