@@ -43,6 +43,7 @@ body {
 }
 
 #button-area1 {
+    border: none;
     background-color: red;
 }
 
