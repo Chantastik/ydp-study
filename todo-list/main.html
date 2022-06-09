@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html> -->
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -18,7 +18,7 @@
             <div id="sub-container">
                 <ul class="list-group" id="list-group">
                     <li class="list-group-item d-flex justify-content-between align-items-center" id="list-group-item">
-                      TODO 리스트
+                      할일 목록
                       <span class="badge badge-primary badge-pill"  onclick="deleteTodo()" id="button-area1">삭제</span>
                     </li>
                    
@@ -38,7 +38,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     
 
-      <script>
+    <script>
                function addTodo(){
                            
                  let todo = $("#input-area").val();
@@ -51,7 +51,7 @@
 
                     $("#list-group").append(list_item)
                     $("#input-area").val('')
-          }
+               }
 
           function deleteTodo(id){
               $(".list-"+id).remove()
@@ -59,7 +59,8 @@
 
           }
 
-        </script>
+    </script>
+  
 
       
 </body>
@@ -68,71 +69,6 @@
 
 
 
-          // let str = "대-한-민-국-만-세-!"
-          // let str2 = str.split("-")
-          // console.log(str2)
-
-          // let str3 = str2.join("*")
-          // console.log(str3)
-
-          // let str4 = str.indexOf("-")
-          // console.log(str4)
-
-
-
-          // 변수, 숫자, 문자, boolean,
-        // let a = "값"
-        // let b = 100
-        // let c = true
-        // let d = false
-
-        // let a2 = "은 뭘까요?"
-        // let a3 = a + a2 + b;
-        // console.log(a3)
-        // let b2 = 200;
-        // let b3 = b + b2;
-        // console.log(b3)
-        // let c2 = 10 > 5;
-        // console.log(c2)
-
-        // console.log(b - b2)
-        // console.log(b * b2)
-        // console.log(b / b2)
-        // console.log(b % b2)
-
-        // let str = "문자"
-        // let str2 = '문자'
-        // let str3 = `문자`
-
-        // console.log(`저의 나이는 ${b}`)
-
-        // // 객체와 배열
-        // let arr = [1,2,3,4,'문자',true,false]
-        // arr.push("값")        
-        // console.log(arr)
-
-        // let obj = {
-        //     "key":"value", "key2":"value2"
-        // }
-        // console.log(obj)
-
-        // let dic = [
-        //     {"a":"apple"},
-        //     {"b":"banana"},
-        //     {"a":"cloud"},
-        // ] 
-        // console.log(dic)
-
-        //  For문 조건문/반복문
-        // let arr = [1,2,3,4,5,6,7];
-        // for(let i=0; i < arr.length; i++) {
-        //     if(arr[i] % 2 == 0){
-              
-        //       // and or
-        //       if(arr[i] %2 == 0 || arr[i] == 2){
-        //         console.log(arr[i])
-        //       }
-               
-        // }
+         
         
       
