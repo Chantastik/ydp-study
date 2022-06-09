@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -21,7 +21,7 @@
                 <ul class="list-group" id="list-group">
                     <li class="list-group-item d-flex justify-content-between align-items-center" id="list-group-item">
                       할일 목록
-                      <span class="badge badge-primary badge-pill" id="button-area1" onclick="deleteTodo()">삭제</span>
+                      <span class="badge badge-primary badge-pill"  onclick="deleteTodo()" id="button-area1">삭제</span>
                     </li>
                    
                 </ul>
@@ -48,19 +48,15 @@
           //     let todo = document.getElementById("input-area").val
                     
                  let todo = $("#input-area").val();
-                 console.log(todo)
                  let id = Math.floor(Math.random() * 100000)
-                 console.log(id)
+                 let list_item = `<li class="list-group-item d-flex justify-content-between align-items-center list-${id}" id="list-group-item">${todo} <span class="badge badge-primary badge-pill" id="button-area1"      
+                       onclick="deleteTodo(${id})">삭제</span></li>`
 
-                 let list_item = `<li class="list-group-item d-flex justify-content-between align-items-center list-${id}" id="list-group-item">
-                      ${todo}
-                      <span class="badge badge-primary badge-pill" id="button-area1" onclick="deleteTodo">삭제</span>
-                    </li>`
                     $("#list-group").append(list_item)
                     $("#input-area").val('')
           }
 
-          function deleteTodo() {
+          function deleteTodo(id){
               $(".list-"+id).remove()
 
 
