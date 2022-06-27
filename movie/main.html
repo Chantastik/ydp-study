@@ -65,16 +65,7 @@
     </div>
   </div>
 
-  <script>
-    function review(){
-        $('#review-modal').modal('show')
-    }  
-    
-    
-  </script>
-
-
-
+ 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
@@ -89,21 +80,23 @@
                 type:"POST",
                 success:function(json){
                     console.log(json)
+
+                    $("#movie-list").html('')
                     let movie_list = json.results;
 
                     for(let i=0; i<movie_list.length; i++){
                       let card =  `<div class="col mb-4">
                             <div class="card">
-                              <img src="" class="card-img-top" alt="...">
+                              <img src="${'http://image.tmdb.org/t/p/w500/'+movie_list[i].poster_path}" class="card-img-top" alt="...">
                               <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <button type="button" class="btn btn-info" id="review-button" onclick="review()">리뷰보기</button>
+                                <h5 class="card-title">${movie_list[i].original_title}</h5>
+                                <button type="button" class="btn btn-info" id="review-button" onclick="review(${movie_list[i].id})">리뷰보기</button>
                               </div>
                             </div>
                           </div>`
 
                           $("#movie-list").append(card)
-                          
+
                     }
 
 
@@ -113,7 +106,10 @@
                 }
             })
         })
-
+        function review(id){
+        $('#review-modal').modal('show')
+        }  
+    
                   
     </script>
 </body>
